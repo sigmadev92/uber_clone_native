@@ -7,7 +7,11 @@ import onboarding2 from "@/assets/images/onboarding2.png";
 import onboarding3 from "@/assets/images/onboarding3.png";
 import signUpCar from "@/assets/images/signup-car.png";
 
-export const images = {
+import person from "@/assets/icons/person.png";
+import lock from "@/assets/icons/lock.png";
+import email from "@/assets/icons/email.png";
+import google from "@/assets/icons/google.png";
+const images = {
   onboarding1,
   onboarding2,
   onboarding3,
@@ -16,6 +20,13 @@ export const images = {
   check,
   noResult,
   message,
+};
+
+const icons = {
+  person,
+  lock,
+  email,
+  google,
 };
 
 const onboarding = [
@@ -42,4 +53,4 @@ const onboarding = [
   },
 ];
 
-export { onboarding };
+export { onboarding, icons, images };

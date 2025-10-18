@@ -3,7 +3,13 @@ import { Stack } from "expo-router";
 export default function Layout() {
   return (
     <>
-      <Stack></Stack>
+      <Stack
+        screenOptions={{
+          headerShown: false, // hides all headers
+        }}
+      >
+        <Stack.Screen name="(tabs)" />
+      </Stack>
     </>
   );
 }

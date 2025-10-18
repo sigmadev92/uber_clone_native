@@ -2,8 +2,9 @@ import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/InputField";
 import OAuth from "@/components/OAuth";
 import { icons, images } from "@/constants";
-import { Link } from "expo-router";
-import { useState } from "react";
+import { useSignIn } from "@clerk/clerk-expo";
+import { Link, router } from "expo-router";
+import { useCallback, useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 
 const SignIn = () => {
@@ -11,7 +12,30 @@ const SignIn = () => {
     email: "",
     password: "",
   });
-  const onSignInHandler = () => {};
+  const { isLoaded, setActive, signIn } = useSignIn();
+  const onSignInHandler = useCallback(async () => {
+    if (!isLoaded) return;
+    // Start the sign-in process using the email and password provided
+    try {
+      const signInAttempt = await signIn.create({
+        identifier: form.email,
+        password: form.password,
+      });
+
+      // If sign-in process is complete, set the created session as active
+      // and redirect the user
+      if (signInAttempt.status === "complete") {
+        await setActive({ session: signInAttempt.createdSessionId });
+        router.replace("/");
+      } else {
+        // If the status isn't complete, check why. User might need to
+        // complete further steps.
+        console.error(JSON.stringify(signInAttempt, null, 2));
+      }
+    } catch (err: any) {
+      console.error(JSON.stringify(err, null, 2));
+    }
+  }, [form.email, form.password, isLoaded]);
   return (
     <ScrollView className="flex-1 bg-white">
       <View className="flex-1 bg-white">
@@ -46,7 +70,7 @@ const SignIn = () => {
       <View className="items-center mb-10">
         <Text className="text-lg">
           {"Don't"} Have an Account?{" "}
-          <Link href={"/auth/sign_up"} className="text-[red]">
+          <Link href={"/(auth)/sign_up"} className="text-[red]">
             Register
           </Link>
         </Text>

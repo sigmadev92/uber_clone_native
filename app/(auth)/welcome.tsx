@@ -10,7 +10,7 @@ const OnBoarding = () => {
   return (
     <SafeAreaView className="p-3 h-full">
       <TouchableOpacity
-        onPress={() => router.replace("/auth/sign_up")}
+        onPress={() => router.replace("/(auth)/sign_up")}
         className="items-end"
       >
         <Text className="py-2 text-md font-bold">Skip</Text>
@@ -23,7 +23,7 @@ const OnBoarding = () => {
         {onboarding.map((item) => (
           <View key={item.id} className="flex items-center justify-center">
             <Image source={item.image} className="w-full h-[300px]" />
-
+            <Text>{index}</Text>
             <View className="flex flex-row justify-center items-center w-full mt-10">
               <Text className="text-4xl font-bold w-[80%] text-center py-2">
                 {item.title}

@@ -11,6 +11,10 @@ import person from "@/assets/icons/person.png";
 import lock from "@/assets/icons/lock.png";
 import email from "@/assets/icons/email.png";
 import google from "@/assets/icons/google.png";
+import home from "@/assets/icons/home.png";
+import chat from "@/assets/icons/chat.png";
+import profile from "@/assets/icons/profile.png";
+import list from "@/assets/icons/list.png";
 const images = {
   onboarding1,
   onboarding2,
@@ -27,6 +31,10 @@ const icons = {
   lock,
   email,
   google,
+  home,
+  list,
+  chat,
+  profile,
 };
 
 const onboarding = [

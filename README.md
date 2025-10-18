@@ -24,6 +24,8 @@
 2.  Expo CLI
 3.  Nativewind
 4.  Expo Go
+5.  Clerk for Authentication
+6.  React-Native Modal
 
 ### Sources
 

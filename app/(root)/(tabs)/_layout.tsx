@@ -1,6 +1,5 @@
 import { Tabs } from "expo-router";
 import { Image, ImageSourcePropType, View } from "react-native";
-
 import { icons } from "@/constants";
 
 const TabIcon = ({
@@ -18,9 +17,9 @@ const TabIcon = ({
     >
       <Image
         source={source}
-        tintColor="black"
         resizeMode="contain"
-        className="w-10 h-10"
+        className="w-10 h-10 "
+        tintColor={"black"}
       />
     </View>
   </View>
@@ -31,22 +30,16 @@ export default function Layout() {
     <Tabs
       initialRouteName="home"
       screenOptions={{
-        tabBarActiveTintColor: "white",
-        tabBarInactiveTintColor: "white",
+        tabBarActiveTintColor: "black",
+        tabBarInactiveTintColor: "red",
+        tabBarActiveBackgroundColor: "#5ff00150",
         headerShown: false,
-
         tabBarShowLabel: false,
         tabBarStyle: {
           marginBottom: 50,
-          backgroundColor: "transparent",
-          display: "flex",
-          flexDirection: "row",
-          borderRadius: 23,
-
-          //   alignItems: "center",
-          justifyContent: "space-between",
-          height: 200,
-          //   position: "absolute",
+          backfaceVisibility: "hidden",
+          maxHeight: 12,
+          position: "absolute",
         },
       }}
     >
@@ -82,7 +75,6 @@ export default function Layout() {
         name="profile"
         options={{
           title: "Profile",
-          headerShown: false,
           tabBarIcon: ({ focused }) => (
             <TabIcon source={icons.profile} focused={focused} />
           ),

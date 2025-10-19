@@ -15,6 +15,10 @@ import home from "@/assets/icons/home.png";
 import chat from "@/assets/icons/chat.png";
 import profile from "@/assets/icons/profile.png";
 import list from "@/assets/icons/list.png";
+import search from "@/assets/icons/search.png";
+import point from "@/assets/icons/point.png";
+import to from "@/assets/icons/to.png";
+import out from "@/assets/icons/out.png";
 const images = {
   onboarding1,
   onboarding2,
@@ -35,6 +39,10 @@ const icons = {
   list,
   chat,
   profile,
+  search,
+  point,
+  to,
+  out,
 };
 
 const onboarding = [

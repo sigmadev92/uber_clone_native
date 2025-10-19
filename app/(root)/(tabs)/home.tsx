@@ -8,12 +8,43 @@ import { icons } from "@/constants";
 
 import { useUser } from "@clerk/clerk-expo";
 import mockRides from "@/constants/mockRIdes";
-
+import { useEffect, useState } from "react";
+import * as Location from "expo-location";
+import { useLocationStore } from "@/zustand_store";
 const Home = () => {
   const { user } = useUser();
+  const { setUserLocation } = useLocationStore();
+
+  //taking location permission - initially false
+
+  const [hasPermission, setPermission] = useState(false);
 
   const handleSignOut = () => {};
   // const handleDestinationPress = () => {};
+
+  useEffect(() => {
+    const requestLocation = async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setPermission(false);
+        return;
+      }
+      setPermission(true);
+      let location = await Location.getCurrentPositionAsync({});
+
+      const address = await Location.reverseGeocodeAsync({
+        latitude: location.coords?.latitude!,
+        longitude: location.coords?.longitude!,
+      });
+
+      setUserLocation({
+        latitude: location.coords?.latitude,
+        longitude: location.coords?.longitude,
+        address: `${address[0].name}, ${address[0].region}`,
+      });
+    };
+    if (!hasPermission) requestLocation();
+  }, []);
 
   return (
     <SafeAreaView className="bg-general-500">

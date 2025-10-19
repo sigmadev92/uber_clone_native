@@ -19,6 +19,9 @@ import search from "@/assets/icons/search.png";
 import point from "@/assets/icons/point.png";
 import to from "@/assets/icons/to.png";
 import out from "@/assets/icons/out.png";
+import marker from "@/assets/icons/marker.png";
+import selectedMarker from "@/assets/icons/selected-marker.png";
+import pin from "@/assets/icons/pin.png";
 const images = {
   onboarding1,
   onboarding2,
@@ -43,6 +46,9 @@ const icons = {
   point,
   to,
   out,
+  marker,
+  selectedMarker,
+  pin,
 };
 
 const onboarding = [

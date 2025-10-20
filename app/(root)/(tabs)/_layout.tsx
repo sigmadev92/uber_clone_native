@@ -36,7 +36,7 @@ export default function Layout() {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
-          marginBottom: 50,
+          marginBottom: 35,
           backfaceVisibility: "hidden",
           maxHeight: 12,
           position: "absolute",

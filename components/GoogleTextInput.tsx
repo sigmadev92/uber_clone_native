@@ -1,10 +1,10 @@
-import { View, Image } from "react-native";
-import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { View } from "react-native";
+// import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
-import { icons } from "@/constants";
+// import { icons } from "@/constants";
 import { GoogleInputProps } from "@/types/types";
 
-const googlePlacesApiKey = process.env.EXPO_PUBLIC_PLACES_API_KEY;
+// const googlePlacesApiKey = process.env.EXPO_PUBLIC_PLACES_API_KEY;
 
 const GoogleTextInput = ({
   icon,
@@ -17,8 +17,8 @@ const GoogleTextInput = ({
     <View
       className={`flex flex-row items-center justify-center relative z-50 rounded-xl ${containerStyle}`}
     >
-      <GooglePlacesAutocomplete
-        fetchDetails={true}
+      {/* <GooglePlacesAutocomplete
+        // fetchDetails={true}
         placeholder="Search"
         debounce={200}
         styles={{
@@ -76,7 +76,7 @@ const GoogleTextInput = ({
           placeholderTextColor: "gray",
           placeholder: initialLocation ?? "Where do you want to go?",
         }}
-      />
+      /> */}
     </View>
   );
 };

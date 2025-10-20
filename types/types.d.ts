@@ -137,3 +137,10 @@ declare interface DriverCardProps {
   selected: number;
   setSelected: () => void;
 }
+
+declare interface MyLocationProps {
+  latitude: number;
+  longitude: number;
+  latitudeDelta: number;
+  longitudeDelta: number;
+}

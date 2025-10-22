@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 import { DriverStore, LocationStore, MarkerData } from "@/types/types";
+import mockMarker from "@/constants/mockMarkerData";
 
 export const useLocationStore = create<LocationStore>((set) => ({
   userLatitude: null,
@@ -43,7 +44,7 @@ export const useLocationStore = create<LocationStore>((set) => ({
 }));
 
 export const useDriverStore = create<DriverStore>((set) => ({
-  drivers: [] as MarkerData[],
+  drivers: mockMarker as MarkerData[],
   selectedDriver: null,
   setSelectedDriver: (driverId: number) =>
     set(() => ({ selectedDriver: driverId })),

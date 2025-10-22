@@ -22,6 +22,9 @@ import out from "@/assets/icons/out.png";
 import marker from "@/assets/icons/marker.png";
 import selectedMarker from "@/assets/icons/selected-marker.png";
 import pin from "@/assets/icons/pin.png";
+import backArrow from "@/assets/icons/back-arrow.png";
+import star from "@/assets/icons/star.png";
+import dollar from "@/assets/icons/dollar.png";
 const images = {
   onboarding1,
   onboarding2,
@@ -49,6 +52,9 @@ const icons = {
   marker,
   selectedMarker,
   pin,
+  backArrow,
+  star,
+  dollar,
 };
 
 const onboarding = [

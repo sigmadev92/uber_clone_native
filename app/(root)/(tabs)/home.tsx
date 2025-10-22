@@ -99,7 +99,22 @@ const Home = () => {
               </TouchableOpacity>
             </View>
             <View className="h-[50px] justify-center items-center border-red-300 border-2">
-              <Text>Place for Ola auto complete feature</Text>
+              <Text>Place for Ola/Google auto complete feature</Text>
+              <TouchableOpacity
+                onPress={async () => {
+                  const destaddress = await Location.reverseGeocodeAsync({
+                    latitude: userLatitude! - 1,
+                    longitude: userLongitude! - 1,
+                  });
+                  handleDestinationPress({
+                    latitude: userLatitude! - 1 || 23.3451,
+                    longitude: userLongitude! - 1 || 77.4562,
+                    address: destaddress[0].formattedAddress!,
+                  });
+                }}
+              >
+                <Text>Press here</Text>
+              </TouchableOpacity>
             </View>
             {/* <GoogleTextInput
               icon={icons.search}

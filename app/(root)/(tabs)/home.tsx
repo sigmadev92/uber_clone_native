@@ -6,7 +6,7 @@ import RideCard from "@/components/RideCard";
 import { icons } from "@/constants";
 import { AntDesign } from "@expo/vector-icons";
 
-import { useUser } from "@clerk/clerk-expo";
+import { useAuth, useUser } from "@clerk/clerk-expo";
 import mockRides from "@/constants/mockRIdes";
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
@@ -16,6 +16,7 @@ import { router } from "expo-router";
 import CustomMap from "@/components/CustomMap";
 const Home = () => {
   const { user } = useUser();
+  const { signOut } = useAuth();
   const { setUserLocation, setDestinationLocation } = useLocationStore();
   const { userLatitude, userLongitude, userAddress } = useLocationStore();
 
@@ -23,7 +24,10 @@ const Home = () => {
 
   const [hasPermission, setPermission] = useState(false);
 
-  const handleSignOut = () => {};
+  const handleSignOut = () => {
+    signOut();
+    router.replace("/(auth)/sign_in");
+  };
   const handleDestinationPress = (location: {
     latitude: number;
     longitude: number;

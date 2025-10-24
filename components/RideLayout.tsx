@@ -8,6 +8,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { icons } from "@/constants";
+// import Map from "./Map";
 
 const RideLayout = ({
   title,
@@ -38,6 +39,7 @@ const RideLayout = ({
               {title || "Go Back"}
             </Text>
           </View>
+          {/* <Map /> */}
         </View>
 
         <BottomSheet

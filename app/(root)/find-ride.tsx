@@ -7,8 +7,7 @@ import RideLayout from "@/components/RideLayout";
 import { useLocationStore } from "@/zustand_store";
 
 const FindRide = () => {
-  const { userAddress, destinationAddress, destinationLatitude } =
-    useLocationStore();
+  const { userAddress, destinationAddress } = useLocationStore();
 
   return (
     <RideLayout title="Ride">

@@ -86,6 +86,7 @@ const Map = () => {
       className="w-full h-full rounded-2xl"
       tintColor="black"
       mapType="mutedStandard"
+      showsPointsOfInterest={false}
       initialRegion={region}
       showsUserLocation={true}
       userInterfaceStyle="light"
@@ -104,7 +105,7 @@ const Map = () => {
         />
       ))}
 
-      {destinationLatitude && destinationLongitude && (
+      {/* {destinationLatitude && destinationLongitude && (
         <>
           <Marker
             key="destination"
@@ -129,7 +130,7 @@ const Map = () => {
             strokeWidth={2}
           />
         </>
-      )}
+      )} */}
     </MapView>
   );
 };
